@@ -38,87 +38,21 @@
   </dependencies>
   <build>
     <plugins>
-      <plugin>
-	<groupId>org.codehaus.mojo</groupId>
-	<artifactId>exec-maven-plugin</artifactId>
-	<version>1.2.1</version>
-	<executions>
-	  <execution>
-	    <goals>
-	      <goal>java</goal>
-	    </goals>
-	  </execution>
-	</executions>
-	<configuration>
-	  <mainClass>com.mycompany.app.App</mainClass>
-	  <arguments>
-	    <argument>argument1</argument>
-	  </arguments>
-	</configuration>
-      </plugin>
-      <plugin>
-   <groupId>org.codehaus.mojo</groupId>
-   <artifactId>findbugs-maven-plugin</artifactId>
-   <version>3.0.1</version>
-   <configuration>
-   <xmlOutput>true</xmlOutput>
-   <!-- Optional directoryto put findbugs xdoc xml report -->
-   <!-- <xmlOutputDirectory>target/site</xmlOutputDirectory>-->
-   <findbugsXmlOutput>true</findbugsXmlOutput>
-   <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
-   </configuration>
-     </plugin>
-     <plugin>
-         <groupId>org.apache.maven.plugins</groupId>
-         <artifactId>maven-pmd-plugin</artifactId>
-         <version>3.8</version>
-     </plugin>
-     <plugin>
-       <groupId>org.apache.maven.plugins</groupId>
-       <artifactId>maven-checkstyle-plugin</artifactId>
-       <version>2.17</version>
-       <reportSets>
-         <reportSet>
-           <reports>
-             <report>checkstyle</report>
-           </reports>
-         </reportSet>
-       </reportSets>
-     </plugin>
-      <plugin>
-	<groupId>org.apache.maven.plugins</groupId>
-	<artifactId>maven-shade-plugin</artifactId>
-	<version>2.1</version>
-	<executions>
-	  <execution>
-	    <phase>package</phase>
-	    <goals>
-	      <goal>shade</goal>
-	    </goals>
-	    <configuration>
-	      <transformers>
-		<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-		  <mainClass>com.mycompany.app.App</mainClass>
-		</transformer>
-	      </transformers>
-	    </configuration>
-	  </execution>
-	</executions>
-      </plugin>
-      
-      <plugin>
-          <!-- This plugin will set the properties values using dependency information -->
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.3</version>
-          <executions>
-              <execution>
-                  <goals>
-                      <goal>properties</goal>
-                  </goals>
-              </execution>
-          </executions>
-      </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <version>2.5</version>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-checkstyle-plugin</artifactId>
+            <version>2.1.6</version>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <version>2.5.2</version>
+        </plugin>
       <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
